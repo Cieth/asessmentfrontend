@@ -1,7 +1,29 @@
 import './App.css';
-
+import Card from './components/Card';
+import Header from './components/Header';
 function App() {
-  return <div className='App'></div>;
+  return (
+    <>
+      <Header />
+      <div className='App'>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+    </>
+  );
 }
 
 export default App;
