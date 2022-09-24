@@ -1,0 +1,14 @@
+@import url('./App.css');
+@import url('./styles/About.scss');
+@import url('./styles/Home.scss');
+@import url('./styles/ProductDetail.scss');
+@import url('./styles/Components/Cards.scss');
+@import url('./styles/Components/Header.scss');
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('./styles/fonts/RobotoCondensed-Regular.ttf'), format('ttf');
+}
+* {
+  font-family: 'Roboto Condensed';
+}

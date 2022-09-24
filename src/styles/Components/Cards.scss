@@ -1,0 +1,72 @@
+.Card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 24rem;
+  height: 24rem;
+  margin: 1rem auto;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: background-color 0.4s ease 0s, box-shadow 0.4s ease 0s;
+  &:hover {
+    box-shadow: rgba(142, 142, 142, 0.16) 8px 8px 8px 8px;
+  }
+  .Card__image-body {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  p {
+    margin-left: 1rem;
+  }
+  img {
+    width: 100px;
+  }
+
+  button {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.6px);
+    -webkit-backdrop-filter: blur(4.6px);
+    border: 1px solid rgba(255, 255, 255, 0.31);
+    width: 10rem;
+    height: 2rem;
+    &:hover {
+      animation: hoverButton 1s infinite ease-in;
+    }
+  }
+  @keyframes hoverButton {
+    0% {
+      background: rgba(255, 255, 255, 0.55);
+    }
+    50% {
+      background: rgba(255, 255, 255, 0.75);
+    }
+    50% {
+      background: rgba(248, 200, 159, 0.772);
+    }
+  }
+  .Card__interact {
+    margin-top: 2rem;
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+  }
+  @media (min-width: 768px) {
+    margin: 2rem 2rem;
+  }
+}

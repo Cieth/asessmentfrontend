@@ -1,0 +1,35 @@
+.Header__body {
+  text-align: center;
+  display: flex;
+  flex-direction: columns;
+  justify-content: center;
+  height: 6rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.71);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  h1 {
+    font-family: 'Roboto Condensed', 'Helvetica Neue';
+    color: rgb(165, 173, 134);
+    transition: color 0.4s ease 0s;
+    &:hover {
+      color: rgb(215, 225, 177);
+    }
+  }
+  h2 {
+    transition: color 0.4s ease 0s;
+    color: rgb(188, 176, 101);
+    &:hover {
+      color: rgb(233, 219, 127);
+    }
+  }
+  a:link {
+    text-decoration: none;
+  }
+  .Header__navigation {
+  }
+}
