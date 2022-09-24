@@ -1,0 +1,94 @@
+.Card__detail_wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.4s ease 0s, box-shadow 0.4s ease 0s;
+  &:hover {
+    box-shadow: rgba(142, 142, 142, 0.16) 8px 8px 8px 8px;
+  }
+  .Card__detail-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40rem;
+    height: 42rem;
+
+    padding-left: 0rem 20rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    .Card__detail-image-body {
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 20px;
+      width: 240px;
+      height: 240px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      p {
+        margin-left: 1rem;
+      }
+      img {
+        margin-top: 1rem;
+        width: 140px;
+      }
+    }
+    .Card__detail-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .Card__detail-description {
+      margin: 1rem 1rem;
+      background: rgba(255, 255, 255, 0.71);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 1rem;
+
+      p {
+        font-weight: 100;
+      }
+    }
+    .Card__detail-price {
+      background: rgba(255, 246, 231, 0.71);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 80px;
+      cursor: pointer;
+    }
+  }
+  @media (min-width: 360px) {
+    transform: translate(-50%, -40%);
+    .Card__detail-body {
+      width: 22rem;
+      height: 35rem;
+    }
+    .Card__detail-title {
+      margin-left: 1rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    transform: translate(-50%, -40%);
+    .Card__detail-body {
+      width: 40rem;
+      height: 40rem;
+    }
+    .Card__detail-title {
+      margin-left: 1rem;
+    }
+  }
+}

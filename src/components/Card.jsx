@@ -1,26 +1,62 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
-const Card = () => {
-  const user = {
-    id: 1,
-    title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-    price: 109.95,
-    description:
-      'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday',
-    category: "men's clothing",
-    image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
+const Card = (prop) => {
+  let random = (str) => {
+    return str === 'min'
+      ? Math.floor(Math.random() * 4)
+      : Math.floor(Math.random() * 60);
   };
+  const [mins, setMinutes] = useState(random('min'));
+  const [secs, setSeconds] = useState(random('sec'));
+  const [finish, setFinish] = useState(false);
+  useEffect(() => {
+    let sampleInterval = setInterval(() => {
+      if (secs > 0) {
+        setSeconds(secs - 1);
+      }
+      if (secs === 0) {
+        if (mins === 0) {
+          setFinish(true);
+        } else {
+          setMinutes(mins - 1);
+          setSeconds(59);
+        }
+      }
+    }, 1000);
+    return () => {
+      clearInterval(sampleInterval);
+    };
+  });
+
   return (
     <div className='Card__body'>
-      <img className='Card__image' src={`${user.image}`} alt='img' />
-      <p className='Card__title'>{user.title}</p>
+      <div className='Card__image-body'>
+        <img className='Card__image' src={`${prop.image}`} alt='img' />
+      </div>
+      <p className='Card__title'>{prop.title}</p>
       <div className='Card__interact'>
-        <span className='Card__counter'>01:00:00</span>
-        <button className='Card__button'> Go to detail</button>
+        <span className='Card__counter'>
+          <div>
+            <p>
+              {' '}
+              {mins}:{secs < 10 ? `0${secs}` : secs}
+            </p>
+          </div>
+        </span>
+
+        <Link to={`/detail/${prop.id}`}>
+          {!finish ? (
+            <button className='Card__button'>Go to details</button>
+          ) : (
+            <>
+              <button className='Card__button' disabled>
+                Go to details
+              </button>
+            </>
+          )}
+        </Link>
       </div>
     </div>
   );
